@@ -23,3 +23,9 @@ def gcd(a, b):
 
 
 #########################################################################
+'''    Verification test    '''
+from random import randint
+import fractions
+if __name__ == "__main__":
+    for a, b in [(randint(1, 10**9), (randint(1, 10**9))) for _ in range(20)]:
+        assert fractions.gcd(a, b) == gcd(a, b) == _gcd(a, b) == egcd(a, b)[0]
