@@ -13,7 +13,7 @@ def Stirling(n, k, fact, factinv, MOD):
         return 0
     result = 0
     for j in range(k+1):
-        result += (-1 if (k-j)&1 else 1) * fact[k] * factinv[j] * factinv[k-j] * pow(j, n, MOD) % MOD
+        result += (-1 if (k-j)&1 else 1) * fact[k] % MOD * factinv[j] * factinv[k-j] % MOD * pow(j, n, MOD) % MOD
         result %= MOD
     result *= factinv[k]
     return result % MOD
